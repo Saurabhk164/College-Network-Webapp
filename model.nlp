@@ -1,0 +1,471 @@
+{
+  "settings": {
+    "languages": [
+      "en"
+    ],
+    "forceNER": true,
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "trainByDomain": false,
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "greet,hello,hey,hi,up,wassup,what": {
+            "intent": "greetings.start",
+            "domain": "default"
+          },
+          "are,how,you": {
+            "intent": "bot.condition",
+            "domain": "default"
+          },
+          "am,fine,i": {
+            "intent": "user.condition",
+            "domain": "default"
+          },
+          "thank,you": {
+            "intent": "greetings.thank",
+            "domain": "default"
+          },
+          "are,confirm,is,it,okay,realli,sure,you": {
+            "intent": "condition.confirm",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "greetings.start": "default",
+          "bot.condition": "default",
+          "user.condition": "default",
+          "greetings.thank": "default",
+          "condition.confirm": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "Hi,Hello,Greetings,hey,wassup, whats up",
+            "intent": "greetings.start"
+          },
+          {
+            "domain": "default",
+            "utterance": "How are you",
+            "intent": "bot.condition"
+          },
+          {
+            "domain": "default",
+            "utterance": "I'm fine",
+            "intent": "user.condition"
+          },
+          {
+            "domain": "default",
+            "utterance": "Thank you",
+            "intent": "greetings.thank"
+          },
+          {
+            "domain": "default",
+            "utterance": "Really, You sure,sure, Are you sure, Is it okay, Confirm",
+            "intent": "condition.confirm"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "hi": 1,
+              "hello": 1,
+              "greet": 1,
+              "hey": 1,
+              "wassup": 1,
+              "what": 1,
+              "up": 1,
+              "how": 1,
+              "are": 1,
+              "you": 1,
+              "i": 1,
+              "am": 1,
+              "fine": 1,
+              "thank": 1,
+              "realli": 1,
+              "sure": 1,
+              "is": 1,
+              "it": 1,
+              "okay": 1,
+              "confirm": 1
+            },
+            "intents": {
+              "greetings.start": 1,
+              "bot.condition": 1,
+              "user.condition": 1,
+              "greetings.thank": 1,
+              "condition.confirm": 1
+            },
+            "intentFeatures": {
+              "greetings.start": {
+                "hi": 1,
+                "hello": 1,
+                "greet": 1,
+                "hey": 1,
+                "wassup": 1,
+                "what": 1,
+                "up": 1
+              },
+              "bot.condition": {
+                "how": 1,
+                "are": 1,
+                "you": 1
+              },
+              "user.condition": {
+                "i": 1,
+                "am": 1,
+                "fine": 1
+              },
+              "greetings.thank": {
+                "thank": 1,
+                "you": 1
+              },
+              "condition.confirm": {
+                "realli": 1,
+                "you": 1,
+                "sure": 1,
+                "are": 1,
+                "is": 1,
+                "it": 1,
+                "okay": 1,
+                "confirm": 1
+              }
+            },
+            "featuresToIntent": {
+              "hi": [
+                "greetings.start"
+              ],
+              "hello": [
+                "greetings.start"
+              ],
+              "greet": [
+                "greetings.start"
+              ],
+              "hey": [
+                "greetings.start"
+              ],
+              "wassup": [
+                "greetings.start"
+              ],
+              "what": [
+                "greetings.start"
+              ],
+              "up": [
+                "greetings.start"
+              ],
+              "how": [
+                "bot.condition"
+              ],
+              "are": [
+                "bot.condition",
+                "condition.confirm"
+              ],
+              "you": [
+                "bot.condition",
+                "greetings.thank",
+                "condition.confirm"
+              ],
+              "i": [
+                "user.condition"
+              ],
+              "am": [
+                "user.condition"
+              ],
+              "fine": [
+                "user.condition"
+              ],
+              "thank": [
+                "greetings.thank"
+              ],
+              "realli": [
+                "condition.confirm"
+              ],
+              "sure": [
+                "condition.confirm"
+              ],
+              "is": [
+                "condition.confirm"
+              ],
+              "it": [
+                "condition.confirm"
+              ],
+              "okay": [
+                "condition.confirm"
+              ],
+              "confirm": [
+                "condition.confirm"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "hi",
+                "hello",
+                "greet",
+                "hey",
+                "wassup",
+                "what",
+                "up",
+                "how",
+                "are",
+                "you",
+                "i",
+                "am",
+                "fine",
+                "thank",
+                "realli",
+                "sure",
+                "is",
+                "it",
+                "okay",
+                "confirm"
+              ],
+              "intents": [
+                "greetings.start",
+                "bot.condition",
+                "user.condition",
+                "greetings.thank",
+                "condition.confirm"
+              ],
+              "perceptrons": [
+                [
+                  1.9528509378433228,
+                  1.9528509378433228,
+                  1.9528509378433228,
+                  1.9528509378433228,
+                  1.9528509378433228,
+                  1.9528509378433228,
+                  1.9528509378433228,
+                  -0.16148725152015686,
+                  -0.24647371470928192,
+                  -0.45630383491516113,
+                  -0.23345057666301727,
+                  -0.23345057666301727,
+                  -0.23345057666301727,
+                  -0.1924620419740677,
+                  -0.06328080594539642,
+                  -0.06328080594539642,
+                  -0.06328080594539642,
+                  -0.06328080594539642,
+                  -0.06328080594539642,
+                  -0.06328080594539642,
+                  0.6154291280032474
+                ],
+                [
+                  -0.1336209923028946,
+                  -0.1336209923028946,
+                  -0.1336209923028946,
+                  -0.1336209923028946,
+                  -0.1336209923028946,
+                  -0.1336209923028946,
+                  -0.1336209923028946,
+                  6.238443851470947,
+                  4.934962272644043,
+                  2.1351168155670166,
+                  -0.3353525698184967,
+                  -0.3353525698184967,
+                  -0.3353525698184967,
+                  -2.7868740558624268,
+                  -1.315014123916626,
+                  -1.315014123916626,
+                  -1.315014123916626,
+                  -1.315014123916626,
+                  -1.315014123916626,
+                  -1.315014123916626,
+                  0.8257359704795714
+                ],
+                [
+                  -0.23185649514198303,
+                  -0.23185649514198303,
+                  -0.23185649514198303,
+                  -0.23185649514198303,
+                  -0.23185649514198303,
+                  -0.23185649514198303,
+                  -0.23185649514198303,
+                  -0.26703307032585144,
+                  -0.4086955487728119,
+                  -0.968163788318634,
+                  4.255866527557373,
+                  4.255866527557373,
+                  4.255866527557373,
+                  -0.5494635105133057,
+                  -0.11989819258451462,
+                  -0.11989819258451462,
+                  -0.11989819258451462,
+                  -0.11989819258451462,
+                  -0.11989819258451462,
+                  -0.11989819258451462,
+                  1.5165318410074062
+                ],
+                [
+                  -0.2568272352218628,
+                  -0.2568272352218628,
+                  -0.2568272352218628,
+                  -0.2568272352218628,
+                  -0.2568272352218628,
+                  -0.2568272352218628,
+                  -0.2568272352218628,
+                  -2.714938163757324,
+                  -3.339871883392334,
+                  4.4423418045043945,
+                  -0.5908312797546387,
+                  -0.5908312797546387,
+                  -0.5908312797546387,
+                  7.784933567047119,
+                  -0.5960303544998169,
+                  -0.5960303544998169,
+                  -0.5960303544998169,
+                  -0.5960303544998169,
+                  -0.5960303544998169,
+                  -0.5960303544998169,
+                  1.8017486356693098
+                ],
+                [
+                  -0.09194914251565933,
+                  -0.09194914251565933,
+                  -0.09194914251565933,
+                  -0.09194914251565933,
+                  -0.09194914251565933,
+                  -0.09194914251565933,
+                  -0.09194914251565933,
+                  -1.2733203172683716,
+                  0.895109236240387,
+                  0.33318278193473816,
+                  -0.1062576100230217,
+                  -0.1062576100230217,
+                  -0.1062576100230217,
+                  -0.5167909264564514,
+                  2.168782949447632,
+                  2.168782949447632,
+                  2.168782949447632,
+                  2.168782949447632,
+                  2.168782949447632,
+                  2.168782949447632,
+                  0.04477462968225551
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "en",
+        "Hi,Hello,Greetings,hey,wassup, whats up"
+      ],
+      [
+        "en",
+        "How are you"
+      ],
+      [
+        "en",
+        "I'm fine"
+      ],
+      [
+        "en",
+        "Thank you"
+      ],
+      [
+        "en",
+        "Really, You sure,sure, Are you sure, Is it okay, Confirm"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "en": {
+        "greetings.start": [
+          {
+            "answer": "Hey, Welcome to NisChat. I am a NLP based Chat bot made by Nishant Shah. "
+          }
+        ],
+        "bot.condition": [
+          {
+            "answer": "I'm a bot so I am fine untill my server is running and doesn't have any error 😉. How are you ?"
+          }
+        ],
+        "user.condition": [
+          {
+            "answer": "Wow, that's great to hear"
+          }
+        ],
+        "greetings.thank": [
+          {
+            "answer": "It's my pleasure mate"
+          }
+        ],
+        "condition.confirm": [
+          {
+            "answer": "Yes"
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}

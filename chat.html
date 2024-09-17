@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chat With Us</title>
+        <link rel="icon" href="images/dylogo.jpeg" type="image/png">
+        <link rel="stylesheet" href="style.css">
+        <script src="response.js" defer></script>
+        <script src="app.js" defer></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <section>
+            <nav>
+                <a href="index.html"><img src="images/dylogo.jpeg"></a>
+                <div class="nav-links" id="navLinks">
+                    <i class="fa fa-times" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="explore.html">EXPLORE</a></li>
+                        <li><a href="news.html">NEWS</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                        <li><a href="chat.html">CHAT WITH US</a></li>
+                    </ul>
+                </div>
+                <i class="fa fa-bars" onclick="showMenu()"></i>
+            </nav>
+            <h1>Chat With Us</h1>
+        </section>
+        <div class="container">
+            <div class="chat-header">
+              <div class="logo">
+                <img src="dylogo.jpeg" />
+              </div>
+              <div class="title">Let's Chat</div>
+            </div>
+            <div class="chat-body"></div>
+            <div class="chat-input">
+              <div class="input-sec">
+                <input type="text" id="txtInput" placeholder="Typ here" autofocus />
+              </div>
+              <div class="send">
+                <img src="images/send.svg" alt="send" />
+              </div>
+            </div>
+          </div>
+    </body>

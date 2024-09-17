@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>News</title>
+        <link rel="icon" href="images/dylogo.jpeg" type="image/png">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            body{  
+  font-family: Calibri, Helvetica, sans-serif;    
+  animation: 10000ms ease-in-out infinite color-change;
+}  
+
+@keyframes color-change {
+ 0% {
+    background-color: rgb(90, 156, 156);
+  }
+  20% {
+    background-color: rgb(54, 46, 46);
+  }
+  40% {
+    background-color: rgb(167, 117, 117);
+  }
+  60% {
+    background-color: rgb(177, 101, 177);
+  }
+  80% {
+    background-color: rgb(71, 116, 71);
+  }
+  100% {
+    background-color: rgb(90, 156, 156);
+  }
+}
+
+            .blink {
+                animation: blinker 2s linear infinite;
+                color: rgb(216, 0, 0);
+                font-family: sans-serif;
+                font-size: large;
+        
+            }
+            @keyframes blinker {
+                80% {
+                    opacity: 0;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <section>
+            <nav>
+                <a href="index.html"><img src="images/dylogo.jpeg"></a>
+                <div class="nav-links" id="navLinks">
+                    <i class="fa fa-times" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="explore.html">EXPLORE</a></li>
+                        <li><a href="news.html">NEWS</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                        <li><a href="/chatbot-master/index.html">CHAT WITH US</a></li>
+                    </ul>
+                </div>
+                <i class="fa fa-bars" onclick="showMenu()"></i>
+            </nav>
+        </section>
+
+<!-- --------Courses-------- -->
+
+<section class="course">
+    <h1>Latest News </h1>
+    <!--<marquee class="blink" direction="up" height="500px">-->
+    <div>*Amidst all the Ganeshotsav celebrations, students were just as enthusiastic in being a part of the fun activities as well! ✨️
+        RAITians heartily expressed their skill sets across a plethora of fun activities and events, making this year's RAITCHARAJA one that many will reminisce about for long. ❤️‍🔥</div>
+    <div>*RAIT-SUC wishes our honourable Chancellor, Dr.Vijay D.Patil Sir, a very happy and an unforgettable birthday! His sagacious judgment has led every single one of us and the institution as a whole on a path of excellence. We give him the best out wishes and hope for his boundless success and prosperity!✨</div>
+    <div>*Teachers Day celebration was indeed a blast .✨ We feel so blessed to have teachers like these who not only push us towards achieving our goal but also provide us with the valuable support we need.🙌</div>
+    <div>*Horizon 2023 kickstarted 2023 with an absolute bang! 💥These 2 days of madness showered us with memories, bliss and entertainment. Horizon 2023 brought us closer, the grind and diligence of many made this spectacle possible. Everything was perfect to the most minute detail and we all will look back at this with fond nostalgia! ❤️‍🔥
+         </div>
+ </marquee>
+</section>
+
+<!-- ------- Footer -------  -->
+
+<section class="footer">
+    <h4>About us</h4>
+    <p>
+        RAIT is one of the best engineering college in Navi Mumbai, Maharashtra. NAAC ACCREDITED with 'A' Grade.
+    </p>
+    <div class="icons">
+        <a class="plain-link" href="https://twitter.com/dypatilrait"><i class="fa fa-twitter"></i></a>
+        <a class="plain-link" href="https://www.facebook.com/DYPatilRAIT"><i class="fa fa-facebook"></i></a>
+        <a class="plain-link" href="https://www.instagram.com/dypatilrait"><i class="fa fa-instagram"></i></a>
+        <a class="plain-link" href="https://www.youtube.com/c/RAITSUC"><i class="fa fa-youtube"></i></a>
+    </div>
+    <p>
+        Made by Saurabh and team
+        <br>
+        Copyright @ 2022
+            <a class="plain-link icons-blue" href="https://www.linkedin.com/mwlite/in/saurabh-kumbhar-5b9057235"><i class="fa fa-linkedin"></i></a>
+            <a class="plain-link icons-blue" href="https://github.com/Saurabh164"><i class="fa fa-github"></i></a>
+            <a class="plain-link icons-blue" href="https://www.instagram.com/saurabhk_164/"><i class="fa fa-instagram"></i></a>
+            <a class="plain-link icons-blue" href="mailto:saurabhkumbhar010604@gmail.com"><i class="fa fa-at"></i></a>
+    </p>
+</section>
+
+<!-- -------------JavaScript for toggle menu------------ -->
+        <script>
+            var navLinks = document.getElementById("navLinks");
+            function showMenu(){
+                navLinks.style.right = "0";
+            }
+            function hideMenu(){
+                navLinks.style.right = "-200px";
+            }
+        </script>
+
+    </body>
+</html>
